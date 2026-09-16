@@ -28,6 +28,7 @@
         android:layout_width="360dp"
         android:layout_height="54dp"
         android:backgroundTint="#0F5DFC"
+        android:onClick="inicio"
         android:text="Iniciar Sesion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,6 +178,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="siguiente"
         android:text="Registrate"
         android:textColor="#002C71"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -216,12 +218,12 @@
         android:id="@+id/imageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        app:srcCompat="@drawable/logoserviciosaqui"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034"
-        tools:srcCompat="@drawable/logoserviciosaqui" />
+        app:layout_constraintVertical_bias="0.034" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

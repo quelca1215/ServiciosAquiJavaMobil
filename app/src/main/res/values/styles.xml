@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Estilo para bordes redondeados en ShapeableImageView -->
+    <style name="RoundedImageView">
+        <item name="cornerSize">12dp</item>
+    </style>
+
+</resources>
