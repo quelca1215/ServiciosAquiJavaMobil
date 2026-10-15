@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Colores Principales / Texto -->
-    <color name="text_primary">#111827</color>      <!-- Texto principal oscuro -->
-    <color name="text_secondary">#6B7280</color>    <!-- Subtítulos y textos secundarios -->
-    <color name="text_muted">#9CA3AF</color>        <!-- Contadores, guiones y flechas -->
-    <color name="primary_blue">#2563EB</color>      <!-- Azul de "Ver todas", "Filtrar" y Verificado -->
-    <color name="star_yellow">#F59E0B</color>       <!-- Estrellas de calificación -->
+    <!-- Brand / Primary Colors -->
+    <color name="primary_blue">#2563EB</color>      <!-- Enterprise Blue -->
+    <color name="primary_dark">#1D4ED8</color>      <!-- Darker Blue on Press -->
+    <color name="primary_light">#EFF6FF</color>     <!-- Subtle Blue Tint -->
+    <color name="accent_orange">#EA580C</color>     <!-- Accent Orange -->
+
+    <!-- Text Colors -->
+    <color name="text_primary">#0F172A</color>      <!-- Slate 900 - Main Dark Text -->
+    <color name="text_secondary">#475569</color>    <!-- Slate 600 - Muted Text -->
+    <color name="text_muted">#94A3B8</color>        <!-- Slate 400 - Hint/Disabled -->
+
+    <!-- Backgrounds & Borders -->
+    <color name="bg_app">#F8FAFC</color>            <!-- Slate 50 - Very clean light background -->
+    <color name="bg_card">#FFFFFF</color>           <!-- White Card -->
+    <color name="border_light">#E2E8F0</color>      <!-- Slate 200 Border -->
+    <color name="border_focused">#2563EB</color>    <!-- Primary Blue Focus -->
 
     <!-- Header y Buscador -->
-    <color name="bg_header">#F0F4F8</color>         <!-- Fondo azul claro del header -->
-    <color name="avatar_orange">#EA580C</color>     <!-- Fondo naranja del perfil ("J") -->
-    <color name="search_hint">#9CA3AF</color>       <!-- Texto del hint de búsqueda -->
+    <color name="bg_header">#F0F4F8</color>
+    <color name="avatar_orange">#EA580C</color>
+    <color name="search_hint">#9CA3AF</color>
+    <color name="star_yellow">#F59E0B</color>
 
     <!-- Fondos de Categorías -->
-    <color name="bg_cat_blue">#EFF6FF</color>       <!-- Fondo Hogar -->
-    <color name="bg_cat_green">#F0FDF4</color>      <!-- Fondo Gasfitería -->
-    <color name="bg_cat_yellow">#FEFCE8</color>     <!-- Fondo Electricidad -->
-    <color name="bg_cat_purple">#F3E8FF</color>     <!-- Fondo Plomería -->
-    <color name="bg_cat_orange">#FFF7ED</color>     <!-- Fondo Transporte -->
-    <color name="bg_cat_pink">#FFE4E6</color>       <!-- Fondo Limpieza -->
+    <color name="bg_cat_blue">#EFF6FF</color>
+    <color name="bg_cat_green">#F0FDF4</color>
+    <color name="bg_cat_yellow">#FEFCE8</color>
+    <color name="bg_cat_purple">#F3E8FF</color>
+    <color name="bg_cat_orange">#FFF7ED</color>
+    <color name="bg_cat_pink">#FFE4E6</color>
 
-    <!-- Iconos de Categorías (Tintes) -->
+    <!-- Iconos de Categorías -->
     <color name="icon_cat_blue">#2563EB</color>
     <color name="icon_cat_green">#0D9488</color>
     <color name="icon_cat_yellow">#D97706</color>
@@ -28,7 +39,7 @@
     <color name="icon_cat_orange">#EA580C</color>
     <color name="icon_cat_pink">#E11D48</color>
 
-    <!-- Tarjetas de Profesionales -->
-    <color name="card_stroke">#E5E7EB</color>       <!-- Borde gris de las tarjetas -->
-    <color name="card_bg">#FFFFFF</color>           <!-- Fondo blanco -->
+    <!-- Tarjetas -->
+    <color name="card_stroke">#E5E7EB</color>
+    <color name="card_bg">#FFFFFF</color>
 </resources>

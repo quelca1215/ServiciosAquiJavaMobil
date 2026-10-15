@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".FullProfileActivity">
+
+    <!-- BARRA SUPERIOR FIJA CON BOTÓN ATRÁS Y TÍTULO -->
+    <LinearLayout
+        android:id="@+id/topBarFullProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+        <ImageButton
+            android:id="@+id/btnBackFullProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Regresar"
+            android:src="@drawable/arrowback_24"
+            app:tint="#0F172A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Perfil del Especialista"
+            android:textColor="#0F172A"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- CONTENIDO DESLIZABLE DEL PERFIL COMPLETO -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomActionBarProfile"
+        android:layout_below="@id/topBarFullProfile"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- HEADER BANNER Y LISTÓN DE VERIFICADO -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_gradient_banner">
+
+                <!-- LISTÓN DE VERIFICACIÓN OFICIAL -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_verified_banner"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="6dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="Verificado"
+                        android:src="@drawable/ic_verified"
+                        app:tint="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="PRESTADOR VERIFICADO"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- CONTENEDOR FLOTANTE CON AVATAR Y DATOS PRINCIPALES -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-45dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <!-- TARJETA CABECERA DEL PERFIL -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="#E2E8F0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <FrameLayout
+                                android:id="@+id/avatarContainerProfile"
+                                android:layout_width="84dp"
+                                android:layout_height="84dp">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/imgFullProfileAvatar"
+                                    android:layout_width="84dp"
+                                    android:layout_height="84dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_person"
+                                    app:shapeAppearanceOverlay="@style/CircularImageView" />
+
+                                <ImageView
+                                    android:layout_width="26dp"
+                                    android:layout_height="26dp"
+                                    android:layout_gravity="bottom|end"
+                                    android:contentDescription="Verificado"
+                                    android:src="@drawable/ic_verified"
+                                    app:tint="#2563EB" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="16dp"
+                                android:layout_toEndOf="@id/avatarContainerProfile"
+                                android:orientation="vertical">
+
+                                <!-- Nombre Completo -->
+                                <TextView
+                                    android:id="@+id/tvFullProfileName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ing. Carlos Eduardo Mendoza Ramos"
+                                    android:textColor="#0F172A"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvFullProfileTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Electricista Industrial &amp; Residencial"
+                                    android:textColor="#475569"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/tvFullProfileBadge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:background="@drawable/bg_badge_emerald"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="4dp"
+                                    android:text="Verificado • 10+ Años Experiencia"
+                                    android:textColor="#059669"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <!-- BARRA DE MÉTRICAS -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="#F8FAFC"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:contentDescription="Estrella"
+                                        android:src="@drawable/ic_star"
+                                        app:tint="#D97706" />
+
+                                    <TextView
+                                        android:id="@+id/tvFullRating"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:text="4.9"
+                                        android:textColor="#0F172A"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="142 Reseñas"
+                                    android:textColor="#64748B"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#E2E8F0" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:contentDescription="Ubicación"
+                                        android:src="@drawable/ic_location_pin"
+                                        app:tint="#2563EB" />
+
+                                    <TextView
+                                        android:id="@+id/tvFullDistance"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:text="1.2 km"
+                                        android:textColor="#0F172A"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Ubicación"
+                                    android:textColor="#64748B"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#E2E8F0" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvFullPrice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bs. 50 / cotizar"
+                                    android:textColor="#059669"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Tipo Cotización"
+                                    android:textColor="#64748B"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SECCIÓN: DOCUMENTACIÓN Y CREDENCIALES VERIFICADAS -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="#ECFDF5"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#A7F3D0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icShieldVerified"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:contentDescription="Credenciales"
+                                android:src="@drawable/ic_security"
+                                app:tint="#059669" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@id/icShieldVerified"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Documentación &amp; Credenciales Verificadas"
+                                    android:textColor="#065F46"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Verificación oficial completada por el equipo de ServiciosAquí"
+                                    android:textColor="#047857"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <!-- LISTA DE DOCUMENTOS VERIFICADOS -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="✓ Cédula de Identidad (C.I.) Verificada"
+                                android:textColor="#065F46"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="✓ Título de Bachiller Humanístico"
+                                android:textColor="#065F46"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="✓ Título en Provisión Nacional en Electricidad / Especialidad"
+                                android:textColor="#065F46"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="✓ Antecedentes Policiales Verificados"
+                                android:textColor="#065F46"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SECCIÓN SOBRE EL ESPECIALISTA -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Sobre el Especialista"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvFullBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Especialista en cortocircuitos, tableros trifásicos, instalaciones LED y certificación de tableros. Más de 10 años de experiencia solucionando urgencias eléctricas residenciales y comerciales con garantía por escrito."
+                    android:textColor="#475569"
+                    android:textSize="14sp" />
+
+                <!-- SECCIÓN ESPECIALIDADES Y GARANTÍA -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Especialidades &amp; Garantía de Trabajo"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvFullSkills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_badge_purple"
+                    android:padding="14dp"
+                    android:text="• Cortocircuitos  • Tableros Eléctricos  • Iluminación LED  • Atención 24/7  • Garantía por Escrito 6 Meses"
+                    android:textColor="#6B21A8"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <!-- SECCIÓN INMERSIVA DE TRABAJOS REALIZADOS, FOTOGRAFÍAS Y VIDEOS DE PORTAFOLIO -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Trabajos Realizados &amp; Portafolio (Fotos y Videos)"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- MUESTRA PORTAFOLIO 1: FOTO DE TRABAJO -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginEnd="12dp"
+                            app:cardBackgroundColor="#EFF6FF"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="1dp"
+                            app:strokeColor="#DBEAFE"
+                            app:strokeWidth="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="14dp">
+
+                                <ImageView
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:contentDescription="Fotografía"
+                                    android:src="@drawable/ic_flash"
+                                    app:tint="#2563EB" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentTop="true"
+                                    android:background="@drawable/bg_badge_blue"
+                                    android:paddingHorizontal="8dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Fotografía"
+                                    android:textColor="#2563EB"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:text="Instalación Tablero Trifásico Comercial"
+                                    android:textColor="#0F172A"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- MUESTRA PORTAFOLIO 2: VIDEO DE TRABAJO -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            android:layout_marginEnd="12dp"
+                            app:cardBackgroundColor="#F3E8FF"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="1dp"
+                            app:strokeColor="#E9D5FF"
+                            app:strokeWidth="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="14dp">
+
+                                <ImageView
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:contentDescription="Video"
+                                    android:src="@drawable/ic_assignment"
+                                    app:tint="#7C3AED" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentTop="true"
+                                    android:background="@drawable/bg_badge_purple"
+                                    android:paddingHorizontal="8dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Video Demostrativo"
+                                    android:textColor="#7C3AED"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:text="Prueba de Carga &amp; Pozo a Tierra"
+                                    android:textColor="#0F172A"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- MUESTRA PORTAFOLIO 3: ESPACIO PARA MÁS CONTENIDO -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="220dp"
+                            android:layout_height="150dp"
+                            app:cardBackgroundColor="#F8FAFC"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#CBD5E1"
+                            app:strokeWidth="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="14dp">
+
+                                <ImageView
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:contentDescription="Portafolio"
+                                    android:src="@drawable/ic_search"
+                                    app:tint="#64748B" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:text="Espacio asignado para subir fotos &amp; videos del prestador"
+                                    android:textColor="#64748B"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- SECCIÓN RESEÑAS DE CLIENTES VERIFICADOS -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Reseñas de Clientes Verificados"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="#E2E8F0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ana Morales - Cliente Verificado"
+                                android:textColor="#0F172A"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:contentDescription="Puntuación"
+                                    android:src="@drawable/ic_star"
+                                    app:tint="#D97706" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:text="5.0"
+                                    android:textColor="#D97706"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Excelente trabajo. Llego puntual, solucionó el problema del tablero eléctrico en minutos y dejó todo limpio. Totalmente recomendado."
+                            android:textColor="#475569"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomActionBarProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnFullProfileCall"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F8FAFC"
+            android:fontFamily="@font/inter"
+            android:text="Llamar"
+            android:textAllCaps="false"
+            android:textColor="#334155"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/call_24"
+            app:iconGravity="textStart"
+            app:iconPadding="6dp"
+            app:iconSize="20dp"
+            app:iconTint="#334155"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp" />
+
+        <Button
+            android:id="@+id/btnFullProfileQuote"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1.8"
+            android:backgroundTint="#2563EB"
+            android:fontFamily="@font/inter"
+            android:text="Solicitar Cotización"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_assignment"
+            app:iconGravity="textStart"
+            app:iconPadding="6dp"
+            app:iconSize="20dp"
+            app:iconTint="#FFFFFF" />
+    </LinearLayout>
+
+</RelativeLayout>

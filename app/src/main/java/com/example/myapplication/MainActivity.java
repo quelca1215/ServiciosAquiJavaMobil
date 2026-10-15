@@ -23,14 +23,19 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-    public void siguiente (View view)
-    {
+
+    public void siguiente(View view) {
         Intent intent = new Intent(MainActivity.this, Registro1_screen.class);
         startActivity(intent);
     }
-    public void inicio (View view)
-    {
+
+    public void inicio(View view) {
         Intent intent = new Intent(MainActivity.this, Home_screen.class);
+        startActivity(intent);
+    }
+
+    public void olvidoContrasena(View view) {
+        Intent intent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
         startActivity(intent);
     }
 }

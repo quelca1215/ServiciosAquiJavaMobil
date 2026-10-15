@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".EditProfileActivity">
+
+    <!-- BARRA SUPERIOR CON BOTÓN ATRÁS Y GUARDAR -->
+    <LinearLayout
+        android:id="@+id/topBarEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+        <ImageButton
+            android:id="@+id/btnBackEditProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Regresar"
+            android:src="@drawable/arrowback_24"
+            app:tint="#0F172A" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:text="Editar Perfil"
+            android:textColor="#0F172A"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSaveProfileTop"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="#2563EB"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="0dp"
+            android:text="Guardar"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+
+    <!-- CONTENIDO FORMULARIO DE EDICIÓN -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomActionBarEdit"
+        android:layout_below="@id/topBarEditProfile"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- BADGE INDICADOR DE MODO EDITADO -->
+            <TextView
+                android:id="@+id/tvEditRoleBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_emerald"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Edición Perfil • Modo Cliente"
+                android:textColor="#059669"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- SECCIÓN 1: DATOS PERSONALES -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#E2E8F0"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Datos Personales &amp; Cuenta"
+                        android:textColor="#0F172A"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Nombre Completo -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Nombre Completo"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:drawableStart="@drawable/person_24"
+                        android:drawablePadding="10dp"
+                        android:hint="Ej. Juan Pérez Rodríguez"
+                        android:inputType="textPersonName"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                    <!-- Correo Electrónico -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Correo Electrónico"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:drawableStart="@drawable/baseline_mail_outline_24"
+                        android:drawablePadding="10dp"
+                        android:hint="ejemplo@correo.com"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                    <!-- Teléfono -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Teléfono de Contacto"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:drawableStart="@drawable/call_24"
+                        android:drawablePadding="10dp"
+                        android:hint="+51 987 654 321"
+                        android:inputType="phone"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                    <!-- Edad / Fecha de Nacimiento -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Edad / Años"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:hint="Ej. 28"
+                        android:inputType="number"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                    <!-- Ubicación / Dirección -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Ubicación / Dirección de Residencia"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:drawableStart="@drawable/ic_location_pin"
+                        android:drawablePadding="10dp"
+                        android:hint="Ej. Av. América y Calle 4, Zona Central"
+                        android:inputType="textPostalAddress"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECCIÓN 2: DATOS DE PRESTADOR DE SERVICIOS (VISIBLE EN MODO PRESTADOR) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardProviderEditFields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#E2E8F0"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Configuración Profesional (Modo Prestador)"
+                        android:textColor="#2563EB"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Título de Especialidad -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Título / Especialidad Principal"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditProviderTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:hint="Ej. Electricista Industrial &amp; Residencial"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                    <!-- Tarifa Base en Bs. -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Tarifa Base Estimada (Monto en Bs.)"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditBasePrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:hint="Ej. 50.00"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                    <!-- Años de Experiencia -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Años de Experiencia Profesional"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditExperience"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:hint="Ej. 10"
+                        android:inputType="number"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                    <!-- Descripción / Biografía -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Presentación / Biografía del Servicio"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEditBio"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:gravity="top|start"
+                        android:hint="Describe tu experiencia y garantía de trabajo..."
+                        android:inputType="textMultiLine"
+                        android:padding="12dp"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BARRA INFERIOR CON BOTÓN GUARDAR CAMBIOS -->
+    <LinearLayout
+        android:id="@+id/bottomActionBarEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnSaveProfileBottom"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:backgroundTint="#2563EB"
+            android:fontFamily="@font/inter"
+            android:text="Guardar Cambios del Perfil"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>

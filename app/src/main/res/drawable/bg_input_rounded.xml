@@ -5,11 +5,11 @@
     <!-- Color de fondo del input (Blanco) -->
     <solid android:color="#FFFFFF" />
 
-    <!-- Borde del input (Grosor y color oscuro) -->
+    <!-- Borde suave estilo Enterprise Slate-200 -->
     <stroke
         android:width="1dp"
-        android:color="#1A1A1A" />
+        android:color="#E2E8F0" />
 
-    <!-- Radio de las esquinas para hacerlas redondeadas -->
-    <corners android:radius="8dp" />
+    <!-- Radio de las esquinas redondeadas -->
+    <corners android:radius="12dp" />
 </shape>
